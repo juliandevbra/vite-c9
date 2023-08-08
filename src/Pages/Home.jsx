@@ -3,8 +3,8 @@ import imgpizza from '../assets/pizza_de_mozzarella.jpg'
 import Card from '../Components/Card/Card'
 import styles from  './Home.module.css'
 
-const Home = () => {
-  console.log(styles)
+const Home = ({add}) => {
+  console.log('Se renderizó el home')
     let pizzas = [
         { id: 1, tipo: 'Muzzarella', precio: '$1200', img: imgpizza },
         { id: 2, tipo: 'Fugazza', precio: '$1250', img: 'https://cdn0.recetasgratis.net/es/posts/7/0/2/pizza_fugazza_7207_600.webp' },
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
         {pizzas.map((pizza) => {
-            return <Card plato={pizza} key={pizza.id}/>
+            return <Card plato={pizza} add={add} key={pizza.id}/>
         })}
     </div>
   )
