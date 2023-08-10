@@ -8,6 +8,9 @@ const Card = ({plato, add}) => {
   const sumar = () => {
     setCounter(counter+1)
   }
+  const restar = () => {
+    setCounter(counter-1)
+  }
   console.log(counter)
   return (
     <div className='card'>
@@ -15,6 +18,7 @@ const Card = ({plato, add}) => {
         <h3>{plato.tipo}</h3>
         <h4>{plato.precio}</h4>
 
+        <button onClick={restar}>-</button>
         <h3>{counter}</h3>
         <button onClick={sumar}>+</button>
 
